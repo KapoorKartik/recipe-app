@@ -2,6 +2,7 @@ import { Button, TextField } from "@mui/material";
 import { useState, useEffect } from "react";
 import { RecipieCards } from "./Recipiecards";
 import { RecipieDetails } from "./Recipiedetails";
+import "./Recipie.css";
 export const Recipie = () => {
   const [dish, setDish] = useState({});
   const [fullData, setFullData] = useState();
@@ -51,57 +52,59 @@ export const Recipie = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <TextField
-          id="demo-helper-text-misaligned-no-helper"
-          label="Title"
-          name="title"
-          onChange={handleChange}
-        />
-        <br />
-        <TextField
-          id="demo-helper-text-misaligned-no-helper"
-          label="Ingredients"
-          name="ingredients"
-          onChange={handleChange}
-        />
-        <br />
-        <TextField
-          id="demo-helper-text-misaligned-no-helper"
-          label="Time to cook"
-          name="time"
-          onChange={handleChange}
-        />
-        <br />
-        <TextField
-          id="demo-helper-text-misaligned-no-helper"
-          label="Instructions"
-          name="inst"
-          onChange={handleChange}
-        />
-        <br />
-        <div>
-          <Button
-            variant="outlined"
-            onClick={() => {
-              fetch("https://foodish-api.herokuapp.com/api")
-                .then((res) => res.json())
-                .then(({ image }) => {
-                  //   console.log("img", image);
-                  setDish({
-                    ...dish,
-                    img: image,
+      <div className="grid">
+        <form onSubmit={handleSubmit}>
+          <TextField
+            id="demo-helper-text-misaligned-no-helper"
+            label="Title"
+            name="title"
+            onChange={handleChange}
+          />
+          <br />
+          <TextField
+            id="demo-helper-text-misaligned-no-helper"
+            label="Ingredients"
+            name="ingredients"
+            onChange={handleChange}
+          />
+          <br />
+          <TextField
+            id="demo-helper-text-misaligned-no-helper"
+            label="Time to cook"
+            name="time"
+            onChange={handleChange}
+          />
+          <br />
+          <TextField
+            id="demo-helper-text-misaligned-no-helper"
+            label="Instructions"
+            name="inst"
+            onChange={handleChange}
+          />
+          <br />
+          <div>
+            <Button
+              variant="outlined"
+              onClick={() => {
+                fetch("https://foodish-api.herokuapp.com/api")
+                  .then((res) => res.json())
+                  .then(({ image }) => {
+                    //   console.log("img", image);
+                    setDish({
+                      ...dish,
+                      img: image,
+                    });
                   });
-                });
-            }}
-          >
-            Add Image
-          </Button>
-          <img style={{ width: "100px" }} src={dish.img} alt="" />
-        </div>
-        <input type="submit" value="Add Recipie" />
-      </form>
-      <RecipieCards data={data} handleFullData={handleFullData} />
+              }}
+            >
+              Add Image
+            </Button>
+            <img className="image" src={dish.img} alt="" />
+          </div>
+          <input type="submit" value="Add Recipie" />
+        </form>
+        <RecipieCards data={data} handleFullData={handleFullData} />
+      </div>
       <RecipieDetails {...fullData} />
     </>
   );
