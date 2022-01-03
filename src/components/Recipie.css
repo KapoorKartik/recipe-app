@@ -1,7 +1,8 @@
 .grid {
   display: grid;
-  grid-template-columns: 50% 30%;
+  grid-template-columns: 50% 40%;
   width: 80%;
+  margin: 15px auto;
 }
 .border {
   border: 1px solid black;
@@ -19,4 +20,11 @@
   width: 150px;
   height: 150px;
   border-radius: 10px;
+}
+.details {
+  display: grid;
+  width: 80%;
+  margin: 10px;
+  grid-template-columns: 30% 60%;
+  grid-gap: 5%;
 }

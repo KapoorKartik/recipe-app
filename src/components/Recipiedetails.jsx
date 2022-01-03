@@ -2,7 +2,7 @@ export const RecipieDetails = ({ title, time, ingredients, img, inst }) => {
   console.log("details", title);
   return (
     <>
-      <div>
+      <div className=".details ">
         <div>
           <img src={img} alt="" />
         </div>
