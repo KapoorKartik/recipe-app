@@ -1,8 +1,15 @@
 import { Button, TextField } from "@mui/material";
 import { useState, useEffect } from "react";
-
+import { RecipieCards } from "./Recipiecards";
+import { RecipieDetails } from "./Recipiedetails";
 export const Recipie = () => {
   const [dish, setDish] = useState({});
+  const [fullData, setFullData] = useState();
+
+  const handleFullData = (d) => {
+    console.log("full", d);
+    setFullData(d);
+  };
 
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -21,11 +28,14 @@ export const Recipie = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const [data, setData] = useState([]);
   const getData = () => {
     fetch("http://localhost:3001/dish")
       .then((res) => res.json())
       .then((data) => {
         console.log("GET", data);
+        setData(data);
       });
   };
 
@@ -91,6 +101,8 @@ export const Recipie = () => {
         </div>
         <input type="submit" value="Add Recipie" />
       </form>
+      <RecipieCards data={data} handleFullData={handleFullData} />
+      <RecipieDetails {...fullData} />
     </>
   );
 };
