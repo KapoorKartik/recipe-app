@@ -39,6 +39,30 @@
       "time": "30 min ",
       "inst": "demo inst-4",
       "id": 10
+    },
+    {
+      "ingredients": "Bread , Milk , Egg , Cream ...",
+      "time": "60 min",
+      "title": "Cake",
+      "inst": "Demo Instruction",
+      "img": "https://foodish-api.herokuapp.com/images/dosa/dosa26.jpg",
+      "id": 11
+    },
+    {
+      "ingredients": "Bread , Milk , Egg , Cream ...",
+      "time": "50 min",
+      "title": "Shai Paneer",
+      "inst": "Demo Instruction -1",
+      "img": "https://foodish-api.herokuapp.com/images/idly/idly46.jpg",
+      "id": 12
+    },
+    {
+      "ingredients": "Bread , Milk , Egg, Cream ...",
+      "time": "50 min ",
+      "title": "Shai Paneer new",
+      "inst": "Demo Instruction -2",
+      "img": "https://foodish-api.herokuapp.com/images/burger/burger45.jpg",
+      "id": 13
     }
   ]
 }

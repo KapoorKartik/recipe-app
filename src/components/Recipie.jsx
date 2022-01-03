@@ -25,6 +25,7 @@ export const Recipie = () => {
     e.preventDefault();
     console.log("dish", dish);
     postData();
+    getData();
   };
   useEffect(() => {
     getData();
@@ -53,11 +54,12 @@ export const Recipie = () => {
   return (
     <>
       <h1>
-        <i> welcome To Recipie App</i>
+        <i>Welcome To Recipie App</i>
       </h1>
       <div className="grid">
         <form onSubmit={handleSubmit}>
           <TextField
+            className="margin"
             id="demo-helper-text-misaligned-no-helper"
             label="Title"
             name="title"
@@ -65,6 +67,7 @@ export const Recipie = () => {
           />
           <br />
           <TextField
+            className="margin"
             id="demo-helper-text-misaligned-no-helper"
             label="Ingredients"
             name="ingredients"
@@ -72,6 +75,7 @@ export const Recipie = () => {
           />
           <br />
           <TextField
+            className="margin"
             id="demo-helper-text-misaligned-no-helper"
             label="Time to cook"
             name="time"
@@ -79,6 +83,7 @@ export const Recipie = () => {
           />
           <br />
           <TextField
+            className="margin"
             id="demo-helper-text-misaligned-no-helper"
             label="Instructions"
             name="inst"
